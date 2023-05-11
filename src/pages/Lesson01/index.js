@@ -3,6 +3,7 @@ import LessonPage from "../../components/LessonPage";
 import Chart from "../../components/Chart01";
 import instruction from "./instruction.md";
 
+//test
 const convertData = (input) => {
   /*return input.map(([name, count]) => ({//inputのname, countを仮引数
     name,//name:name 省略されてて、こう書ける
@@ -60,6 +61,7 @@ nameとcountを1要素ずつ見ていく(foreachみたいなやつ)
 =>の先が
 ※{}は[]と同じ
 */
+//https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 
 const Lesson = () => {
   return (

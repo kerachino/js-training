@@ -4,7 +4,26 @@ import Chart from "../../components/Chart03";
 import instruction from "./instruction.md";
 
 const convertData = (input) => {
-  return input.filter((item) => item.gender === "男性");//男性のみ表示
+  //return input.filter((item) => item.gender === "男性");//男性のみ表示
+  
+  
+  /*let array = [];
+  for(let i=0; i< input.length; i++){
+    if(input[i].gender === "男性"){
+      array.push(input[i]);
+    }
+  }
+  console.log(array);
+  return array;*/
+
+  let array = [];
+  for(const item of input){
+    if(item.gender === "男性"){
+      array.push(item);
+    }
+  }
+  console.log(array);
+  return array;
 };
 
 const Lesson = () => {

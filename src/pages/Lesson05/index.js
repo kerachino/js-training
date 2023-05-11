@@ -14,6 +14,7 @@ const convertData = (input) => {
   const min = Math.round(Math.min(...input.map(({ y }) => y)));
   //...は展開する物　[...[1, 2, 3], 4, 5] は[1, 2, 3, 4, 5]になる　今回の入力では...は関係なし。{}はまとめるものだから、展開されても一つになればあってもなくても同じ意味
   //Math.minで配列の最小値, Math.roundは四捨五入
+  //Math.min(...[1,2,3])つけないと実行できない
   const max = Math.round(Math.max(...input.map(({ y }) => y)));
   const bins = Array.from({ length: max - min + 1 }).map((_, i) => {
   //Array.from...のmapをしている。(これまではinput.map)
@@ -23,6 +24,7 @@ const convertData = (input) => {
   //つまり、まず[0,1,2,,,]とlengthまであるものの要素番号をmapのiで取得して使っている
     const obj = {
       bin: (min + i).toString(),
+      // 'bin: ${min+i}';
     };
     //bin(という名前にしたオブジェクト、目標は[{"bin","name",,,}])だ)をobjに入れる
     for (const gender of genders) {
@@ -39,6 +41,7 @@ const convertData = (input) => {
   }
   return bins;
 };
+//forEachは配列でしか使えない。for ofはなんでもできるが、添え字(何番目か)の処理はできない
 
 const Lesson = () => {
   return (
